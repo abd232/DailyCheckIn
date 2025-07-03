@@ -1,9 +1,9 @@
 ﻿using DailyCheckIn.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
+
 namespace DailyCheckIn.Data
 {
     public class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
@@ -101,6 +101,9 @@ namespace DailyCheckIn.Data
                 .HasForeignKey(p => p.ModifiedById)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Payroll>()
+                .HasIndex(p => new { p.UserId, p.Month })
+                .IsUnique();
         }
     }
 }
