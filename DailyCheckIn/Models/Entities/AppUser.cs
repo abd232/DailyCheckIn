@@ -9,8 +9,8 @@ namespace DailyCheckIn.Models.Entities
         public double HourlyRate { get; set; }
         public int Bonus { get; set; } = 0;
         public bool IsActive { get; set; } = true;
-        public ICollection<Attendance>? Attendances { get; set; }
-        public ICollection<Advance>? Advances { get; set; }
+        public ICollection<Attendance> Attendances { get; set; } = [];
+        public ICollection<Advance> Advances { get; set; } = [];
         public DateOnly StartDate { get; set; }
         public Guid? ModifiedById { get; set; }
         public AppUser? ModifiedBy { get; set; }

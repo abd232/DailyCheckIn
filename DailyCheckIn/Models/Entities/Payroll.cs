@@ -1,4 +1,5 @@
-﻿using DailyCheckIn.Models.Entities.Base;
+﻿using DailyCheckIn.Enums;
+using DailyCheckIn.Models.Entities.Base;
 
 namespace DailyCheckIn.Models.Entities
 {
@@ -7,6 +8,7 @@ namespace DailyCheckIn.Models.Entities
         public Guid Id { get; set; }
         public required Guid UserId { get; set; }
         public required AppUser User { get; set; }
+        public required MonthsEnum Month { get; set; }
         public required double TotalRegularHours { get; set; }
         public required double TotalTimeOffsHours { get; set; }
         public required double TotalOverTimeHours { get; set; }
