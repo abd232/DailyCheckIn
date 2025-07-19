@@ -1,0 +1,35 @@
+﻿@model DailyCheckIn.Models.DTO.DialyReportDTO
+
+<section class="w-100 border-1">
+    <div class="d-flex flex-row justify-content-between p-3 border-1">
+        <p>Hours worked</p>
+        <p>00:00</p>
+    </div>
+    <div class="d-flex flex-row justify-content-between p-3 border-1">
+        <p>Over time hours worked</p>
+        <p>00:00</p>
+    </div>
+
+    <div class="d-flex flex-column align-items-center m-5">
+        <p>Total</p>
+        <p>00:00</p>
+    </div>
+</section>
+
+<script>
+    const svg = document.getElementById("scanner");
+    const scanRect = document.getElementById("scan-rect");
+
+    svg.addEventListener("click", () => {
+        $.ajax({
+            url: "/Home/LoadPartial",
+            type: "GET",
+            success: function (result) {
+                $("#partialContainer").html(result);
+            },
+            error: function () {
+                alert("Error loading partial.");
+            }
+        });
+    });
+</script>

@@ -18,5 +18,20 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #F4F6F8;
+    color: #2D3436;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header nav {
+    background-color: #2C3E50;
+}
+
+    header nav a {
+        color: white;
+    }
+
+footer {
+    background-color: #2C3E50;
 }

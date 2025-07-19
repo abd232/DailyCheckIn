@@ -1,0 +1,7 @@
+﻿.border-radise-50 {
+    border-radius: 50px;
+}
+.selected {
+    background-color: #2C3E50;
+    color: #2C3E50;
+}

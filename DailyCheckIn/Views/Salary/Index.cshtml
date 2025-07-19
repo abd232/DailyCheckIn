@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Salary Page";
+}
+<section class="border-2 p-1 d-flex flex-column">
+    <div class="d-flex flex-row align-items-center width-400 p-2 justify-content-between date-container">
+        <svg id="leftArrowButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left arrow-icon-hover" viewBox="0 0 16 16">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+        </svg>
+        <p>@DateTime.Now.DayOfWeek.ToString() @DateTime.Now.ToString()</p>
+        <svg id="rightArrowButton" xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-caret-right arrow-icon-hover" viewBox="0 0 16 16">
+            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753" />
+        </svg>
+    </div>
+    @for(var i = 0; i<7; i++)
+    {
+        <partial name="_DayReportSalaryPartial" />
+    }
+</section>
+
+<section class="w-100 border-1 margin_bottom">
+    <div class="d-flex flex-row justify-content-between p-3 border-1">
+        <p>Total Hours worked</p>
+        <p>00:00</p>
+    </div>
+    <div class="d-flex flex-row justify-content-between p-3 border-1">
+        <p>Total Over time hours worked</p>
+        <p>00:00</p>
+    </div>
+
+    <div class="d-flex flex-column align-items-center m-3">
+        <p>Total Money earned</p>
+        <p>00:00</p>
+    </div>
+</section>
