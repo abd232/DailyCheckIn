@@ -79,7 +79,6 @@ C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\runtime
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyChe.3C6F118A.Up2Date
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -147,3 +146,11 @@ C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\ru\Micr
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyCheckIn.sourcelink.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Account\Login.cshtml.rz.scp.css
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Account\Register.cshtml.rz.scp.css
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\Mvc.Grid.Core.dll
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyCheckIn.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Salary\Index.cshtml.rz.scp.css
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Salary\_DayReportSalaryPartial.cshtml.rz.scp.css

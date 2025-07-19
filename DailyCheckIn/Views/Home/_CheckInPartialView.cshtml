@@ -1,0 +1,18 @@
+﻿@model DailyCheckIn.Models.DTO.CheckInModelDTO
+<section>
+    <input class="col-lg-12 text-center" type="time" value="16:30" />
+    <select class="custom-select m-2 border-3">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+    <svg class="d-flex flex-column align-content-center" height="400" width="300" xmlns="http://www.w3.org/2000/svg" id="scanner">
+        <clipPath id="myClip">
+            <rect id="scan-rect" width="150" height="0" x="80" y="100" fill="green"></rect>
+        </clipPath>
+        <ellipse id="ellipse" rx="55" ry="82" cx="150" cy="200" style="fill:#F4F6F8;stroke:black;stroke-width:2px;cursor:pointer;" />
+        <use clip-path="url(#myClip)" href="#ellipse" fill="red" />
+        <image x="100" y="0" width="100" height="400" pointer-events="none" href="@Url.Content("~/fingerprint_png.png")"></image>
+    </svg>
+</section>

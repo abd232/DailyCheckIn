@@ -1,0 +1,35 @@
+﻿@keyframes openYourHeart {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 200px;
+    }
+}
+
+.checkContainer {
+    width: 400px;
+}
+
+.animate-scan {
+    animation: openYourHeart 5s forwards;
+}
+
+.arrow-icon-hover {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+    .arrow-icon-hover:hover {
+        color: blue; /* hover color */
+        fill: blue;
+    }
+    .arrow-icon-hover:active {
+        color: black; /* hover color */
+        fill: black;
+    }
+.date-container {
+    border: inset 1px black;
+    width: 400px;
+}
