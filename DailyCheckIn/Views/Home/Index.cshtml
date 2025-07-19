@@ -1,8 +1,43 @@
-﻿@{
+﻿@model DailyCheckIn.Models.DTO.HomeModelDTO
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex justify-content-center flex-column align-self-center">
+    <div class="d-flex flex-row align-items-center width-400 p-2 justify-content-between date-container border_outset">
+        <svg id="leftArrowButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left arrow-icon-hover" viewBox="0 0 16 16">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+        </svg>
+        <p>@Model.DayDate.DayOfWeek.ToString() @Model.DayDate.ToString()</p>
+        <svg id="rightArrowButton" xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-caret-right arrow-icon-hover" viewBox="0 0 16 16">
+            <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753" />
+        </svg>
+    </div>
+    <div class="border-3 checkContainer d-flex flex-column justify-content-center align-items-center width-400">    
+        <partial name="_CheckInPartialView" model="Model.CheckInModelDTO" />
+        <partial name="_DayReportPartialView" model="Model.DialyReportDTO" />
+    </div>
 </div>
+<script>
+    const leftArrowButton = document.getElementById("leftArrowButton");
+    const rightArrowButton = document.getElementById("rightArrowButton")
+
+    leftArrowButton.onclick = function () {
+        const url = new URL(window.location.href);
+        url.searchParams.set(
+            "DayDate",
+            "@Model.DayDate.AddDays(-1).ToString("yyyy-MM-dd")"
+        );
+        window.location.href = url.toString();
+    };
+
+    rightArrowButton.onclick = function () {
+        const url = new URL(window.location.href);
+        url.searchParams.set(
+            "DayDate",
+            "@Model.DayDate.AddDays(1).ToString("yyyy-MM-dd")"
+        );
+        window.location.href = url.toString();
+    };
+
+</script>

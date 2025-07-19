@@ -1,0 +1,27 @@
+﻿
+.date-container {
+    border: inset 1px black;
+}
+
+.animate-scan {
+    animation: openYourHeart 5s forwards;
+}
+
+.arrow-icon-hover {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+    .arrow-icon-hover:hover {
+        color: blue; /* hover color */
+        fill: blue;
+    }
+
+    .arrow-icon-hover:active {
+        color: black; /* hover color */
+        fill: black;
+    }
+
+.margin_bottom {
+    margin-bottom:60px;
+}

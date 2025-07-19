@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\wwwroot\\fingerprint_png.png",
+      "PackagePath": "staticwebassets\\fingerprint_png.png"
+    },
+    {
       "Id": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
