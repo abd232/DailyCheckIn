@@ -7,7 +7,7 @@ namespace DailyCheckIn.Helpers
         public static double CalculateDialyMinutesWorked(Attendance attendance)
         {
             if (!attendance.CheckOut.HasValue)
-                return -1;
+                throw new Exception("Error: the day must have a checkout to calculate the hours worked");
 
             double TotalTimesOffMinutes = 0;
 
@@ -22,7 +22,7 @@ namespace DailyCheckIn.Helpers
             if (attendance.Date == DateOnly.FromDateTime(attendance.CheckOut.Value))
                 return attendance.CheckOut.Value.TimeOfDay.TotalMinutes - attendance.CheckIn.ToTimeSpan().TotalMinutes - TotalTimesOffMinutes;
             else if (attendance.Date > DateOnly.FromDateTime(attendance.CheckOut.Value))
-                return -1;
+                throw new Exception("Error: the checkout date must be after the check In date");
             else
             {
                 var numberOfDays = DateOnly.FromDateTime(attendance.CheckOut.Value).Day - attendance.Date.Day;
@@ -57,7 +57,7 @@ namespace DailyCheckIn.Helpers
             if (attendance.Date == DateOnly.FromDateTime(forNow))
                 return forNow.TimeOfDay.TotalMinutes - attendance.CheckIn.ToTimeSpan().TotalMinutes - TotalTimesOffMinutes;
             else if (attendance.Date > DateOnly.FromDateTime(forNow))
-                return -1;
+                throw new Exception("Error: the checkout date must be after the check In date");
             else
             {
                 var numberOfDays = DateOnly.FromDateTime(forNow).Day - attendance.Date.Day;
@@ -74,15 +74,12 @@ namespace DailyCheckIn.Helpers
 
                 return totalOfMinutesTillMidNight + totalOfMinutesTillMidNight;
             }
-                
-
-
         }
 
-        public static double CalculateDailyMoneyEarned(double MinutesWorked, double HourlyRate)
+        public static double CalculateDailyMoneyEarned(double NormalMinutesWorked,double OverTimeMinutes, double HourlyRate)
         {
 
-            return MinutesWorked * HourlyRate / 60;
+            return (NormalMinutesWorked + (OverTimeMinutes * 1.5)) * HourlyRate / 60;
         }
     }
 }

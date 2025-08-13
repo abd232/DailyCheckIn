@@ -1,17 +1,86 @@
-﻿
-<div class="dayContainer">
+﻿@model DailyCheckIn.Models.DTO.DayReportSalary
+<div class="dayContainer @(string.IsNullOrEmpty(Model.ErrorMessage) ? "" : "bg-red-300")">
+    <p class="align-self-center">@Model.DayDate.DayOfWeek.ToString() @Model.DayDate.ToString()</p>
     <div class="d-flex flex-row justify-content-around">
         <div class="d-flex flex-row gap-1">
             <p>Hours worked:</p>
-            <p>00:00</p>
+            <p>@Math.Round(Model.TotalMinutesWorked / 60, 2)</p>
         </div>
         <div class="d-flex flex-row gap-1">
             <p>Hours worked:</p>
-            <p>00:00</p>
+            <p>@Math.Round(Model.TotalOverTimeMinutesWorked / 60, 2)</p>
         </div>
     </div>
-    <div class="class= d-flex flex-row gap-1 align-self-center">
+    <div class="d-flex flex-row gap-1 align-self-center">
         <p>Money Earned: </p>
-        <p>00.00</p>
+        <p>@Math.Round(@Model.TotalMoneyEarned, 2)</p>
     </div>
+    <button id="openModalBtn-@Model.DayDate.ToString("yyyy-MM-dd")" type="button" class="top-left btn-outline-secondary btn info-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill svg-info" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"></path>
+        </svg>
+        <span class="visually-hidden">Button</span>
+    </button>
+    <a class="bottom-left" href="@Url.Action("Index", "Home")?DayDate=@Model.DayDate.ToString("yyyy-MM-dd")"
+        more details })""> More details
+    </a>
 </div>
+
+@if (string.IsNullOrEmpty(Model.ErrorMessage) && (Model == null || Model.TimeOffDTOs == null || Model.TimeOffDTOs.Count == 0))
+{
+    <text>
+        <script>
+            document.getElementById("openModalBtn-@Model.DayDate.ToString("yyyy-MM-dd")").disabled = true;
+        </script>
+    </text>
+}
+else
+{
+    <text>
+        <script>
+            document.getElementById("openModalBtn-@Model.DayDate.ToString("yyyy-MM-dd")").addEventListener('click', function () {
+                const exampleModal = document.getElementById('exampleModal');
+                const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                const dayName = "@Model.DayDate.DayOfWeek.ToString()";
+                const date = "@Model.DayDate.ToString("yyyy-MM-dd")";
+
+                const modalTitle = exampleModal.querySelector('.modal-title');
+                const modalBody = exampleModal.querySelector('.modal-body');
+
+                modalTitle.textContent = `Timeoff for ${dayName} - ${date}`;
+                modalBody.textContent = '';
+                const pErrorString = document.createElement('p');
+                const pTimeOffs = document.createElement('p');
+                const div = document.createElement('div');
+                @foreach (var timeoff in Model.TimeOffDTOs)
+                {
+                    if (@timeoff.TimeOffEnd.HasValue)
+                    {
+                        <text>
+                               pTimeOffs.innerHTML  += '@timeoff.TimeOffStart.ToString(@"hh\\:mm") ------------------------------------> @timeoff.TimeOffEnd.Value.ToString(@"hh\\:mm")<br>';
+                        </text>
+                    }
+                    else
+                    {
+                        <text>
+                              pTimeOffs.innerHTML  += '@timeoff.TimeOffStart.ToString(@"hh\\:mm") ------------------------------------> \n <br>';
+                        </text>
+                    }
+                }
+
+                div.appendChild(pTimeOffs);
+
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <text>
+                        pErrorString.innerHTML = '@Model.ErrorMessage';
+                        div.appendChild(pErrorString);
+                    </text>
+                }
+
+                modalBody.appendChild(div);
+                myModal.show();
+            });
+        </script>
+    </text>
+}

@@ -15,11 +15,6 @@ C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyCh
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyCheckIn.RazorAssemblyInfo.cs
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets\msbuild.DailyCheckIn.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets\msbuild.build.DailyCheckIn.props
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.DailyCheckIn.props
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.DailyCheckIn.props
-C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\bundle\DailyCheckIn.styles.css
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\projectbundle\DailyCheckIn.bundle.scp.css
@@ -154,3 +149,12 @@ C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\Mvc.Gri
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\DailyCheckIn.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Salary\Index.cshtml.rz.scp.css
 C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\scopedcss\Views\Salary\_DayReportSalaryPartial.cshtml.rz.scp.css
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\Data\AttendancesForAdmin.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\bin\Debug\net8.0\DailyCheckIn.staticwebassets.endpoints.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Quantum\source\repos\DailyCheckIn\DailyCheckIn\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

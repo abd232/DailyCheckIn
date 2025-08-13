@@ -44,13 +44,23 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     await IdentitySeeder.SeedRolesAndAdminAsync(services);
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        await context.Database.MigrateAsync();
+        await AttendanceSeeder.SeedAttendances(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occured during migration!");
+    }
 }
 
 using (var scope = app.Services.CreateScope())
 {
     await IdentitySeeder.SeedRolesAndAdminAsync(scope.ServiceProvider);
 }
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,0 +1,351 @@
+[
+  {
+    "Date": "2025-05-25",
+    "CheckIn": "10:07:59",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "17:44:56",
+        "TimeOffEnd": "18:07:56"
+      },
+      {
+        "TimeOffStart": "10:18:22",
+        "TimeOffEnd": "11:03:22"
+      },
+      {
+        "TimeOffStart": "17:46:08",
+        "TimeOffEnd": "18:02:08"
+      }
+    ],
+    "CheckOut": "2025-05-25T22:13:20"
+  },
+  {
+    "Date": "2025-05-26",
+    "CheckIn": "11:22:15",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-05-28",
+    "CheckIn": "11:48:11",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-05-28T22:04:48"
+  },
+  {
+    "Date": "2025-05-29",
+    "CheckIn": "10:23:46",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-05-29T21:59:53"
+  },
+  {
+    "Date": "2025-05-30",
+    "CheckIn": "11:04:04",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-05-30T22:15:14"
+  },
+  {
+    "Date": "2025-05-31",
+    "CheckIn": "11:26:34",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-06-01",
+    "CheckIn": "10:10:05",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-01T22:05:38"
+  },
+  {
+    "Date": "2025-06-02",
+    "CheckIn": "10:02:36",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "21:22:10",
+        "TimeOffEnd": "21:50:10"
+      },
+      {
+        "TimeOffStart": "10:43:27",
+        "TimeOffEnd": "10:58:27"
+      },
+      {
+        "TimeOffStart": "19:28:06",
+        "TimeOffEnd": "19:56:06"
+      }
+    ],
+    "CheckOut": "2025-06-02T22:03:13"
+  },
+  {
+    "Date": "2025-06-03",
+    "CheckIn": "10:36:27",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-03T22:14:44"
+  },
+  {
+    "Date": "2025-06-04",
+    "CheckIn": "12:05:52",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "16:38:11",
+        "TimeOffEnd": "17:20:11"
+      }
+    ],
+    "CheckOut": "2025-06-04T22:08:21"
+  },
+  {
+    "Date": "2025-06-06",
+    "CheckIn": "10:34:19",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-06T22:14:59"
+  },
+  {
+    "Date": "2025-06-08",
+    "CheckIn": "10:11:41",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-08T21:57:16"
+  },
+  {
+    "Date": "2025-06-09",
+    "CheckIn": "11:05:25",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-09T21:55:13"
+  },
+  {
+    "Date": "2025-06-13",
+    "CheckIn": "10:43:27",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-13T22:19:55"
+  },
+  {
+    "Date": "2025-06-17",
+    "CheckIn": "10:53:37",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-06-18",
+    "CheckIn": "10:57:16",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "11:04:29",
+        "TimeOffEnd": "11:46:29"
+      }
+    ],
+    "CheckOut": "2025-06-18T22:08:18"
+  },
+  {
+    "Date": "2025-06-22",
+    "CheckIn": "12:11:35",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "13:42:25",
+        "TimeOffEnd": "14:27:25"
+      },
+      {
+        "TimeOffStart": "19:36:23",
+        "TimeOffEnd": "20:04:23"
+      }
+    ],
+    "CheckOut": "2025-06-22T22:15:27"
+  },
+  {
+    "Date": "2025-06-23",
+    "CheckIn": "11:20:20",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-06-24",
+    "CheckIn": "10:23:26",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-06-25",
+    "CheckIn": "11:49:46",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "16:22:46",
+        "TimeOffEnd": "17:06:46"
+      },
+      {
+        "TimeOffStart": "19:32:24",
+        "TimeOffEnd": "19:51:24"
+      }
+    ],
+    "CheckOut": "2025-06-25T22:00:34"
+  },
+  {
+    "Date": "2025-06-30",
+    "CheckIn": "10:14:11",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-06-30T22:17:32"
+  },
+  {
+    "Date": "2025-07-03",
+    "CheckIn": "11:34:32",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-03T22:13:17"
+  },
+  {
+    "Date": "2025-07-05",
+    "CheckIn": "11:18:52",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "16:29:56",
+        "TimeOffEnd": "16:56:56"
+      }
+    ],
+    "CheckOut": "2025-07-05T22:12:01"
+  },
+  {
+    "Date": "2025-07-06",
+    "CheckIn": "10:32:47",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-06T22:07:03"
+  },
+  {
+    "Date": "2025-07-08",
+    "CheckIn": "10:35:08",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-07-09",
+    "CheckIn": "10:36:47",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-09T22:17:01"
+  },
+  {
+    "Date": "2025-07-11",
+    "CheckIn": "11:50:46",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-11T22:02:09"
+  },
+  {
+    "Date": "2025-07-12",
+    "CheckIn": "12:06:36",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-12T22:10:42"
+  },
+  {
+    "Date": "2025-07-15",
+    "CheckIn": "11:35:43",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-15T22:12:05"
+  },
+  {
+    "Date": "2025-07-16",
+    "CheckIn": "11:31:10",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "18:57:19",
+        "TimeOffEnd": "19:32:19"
+      }
+    ],
+    "CheckOut": "2025-07-16T22:06:59"
+  },
+  {
+    "Date": "2025-07-18",
+    "CheckIn": "11:06:13",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-07-20",
+    "CheckIn": "11:03:00",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-20T22:17:12"
+  },
+  {
+    "Date": "2025-07-21",
+    "CheckIn": "10:27:08",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-21T22:05:43"
+  },
+  {
+    "Date": "2025-07-22",
+    "CheckIn": "11:03:36",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-22T22:18:00"
+  },
+  {
+    "Date": "2025-07-23",
+    "CheckIn": "10:50:18",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [
+      {
+        "TimeOffStart": "21:01:26",
+        "TimeOffEnd": "21:20:26"
+      },
+      {
+        "TimeOffStart": "16:00:54",
+        "TimeOffEnd": "16:15:54"
+      },
+      {
+        "TimeOffStart": "14:34:07",
+        "TimeOffEnd": "14:44:07"
+      }
+    ],
+    "CheckOut": "2025-07-23T22:03:50"
+  },
+  {
+    "Date": "2025-07-24",
+    "CheckIn": "10:12:58",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-24T22:17:21"
+  },
+  {
+    "Date": "2025-07-25",
+    "CheckIn": "10:05:05",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-25T22:10:19"
+  },
+  {
+    "Date": "2025-07-26",
+    "CheckIn": "11:02:06",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": []
+  },
+  {
+    "Date": "2025-07-27",
+    "CheckIn": "11:03:48",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-27T22:05:46"
+  },
+  {
+    "Date": "2025-07-28",
+    "CheckIn": "10:53:19",
+    "UserId": "8D89C406-5BCC-4D16-4E4B-08DDADA0FF8F",
+    "TimeOffs": [],
+    "CheckOut": "2025-07-28T21:56:58"
+  }
+]
