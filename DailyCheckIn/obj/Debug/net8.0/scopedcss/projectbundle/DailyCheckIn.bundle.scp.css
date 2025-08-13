@@ -73,18 +73,58 @@
         fill: black;
     }
 
-.margin_bottom[b-k4hgswi7jt] {
-    margin-bottom:60px;
+.margin-bottom[b-k4hgswi7jt] {
+    margin: 0 0.25rem 60px 0.25rem;
+}
+
+@media (max-width: 576px) { /* Bootstrap's sm breakpoint */
+    #exampleModal .modal-dialog[b-k4hgswi7jt] {
+        max-width: 80%; /* or any percentage you like */
+        margin: auto;
+    }
 }
 /* _content/DailyCheckIn/Views/Salary/_DayReportSalaryPartial.cshtml.rz.scp.css */
 .dayContainer[b-ohrx64tscd] {
+    position:relative;
     display: flex;
     flex-direction: column;
+    justify-content:space-around;
     width: 100%;
-    height: 70px;
-    justify-content: space-around;
-    align-items: stretch;
+    height: 80px;
     border: inset 2px;
+}
+    .dayContainer > *[b-ohrx64tscd] {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 20px;
+    }
+
+.bg-red-300[b-ohrx64tscd] {
+    background-color: #ea868f;
+    border: inset 3px;
+}
+
+.top-left[b-ohrx64tscd] {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.bottom-left[b-ohrx64tscd] {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    text-decoration:underline;
+    color:blue;
+}
+
+.info-button[b-ohrx64tscd] {
+    display: inline-flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;
+    height: 26px;
+    padding: 3px;
+    border-radius: 50%
 }
 /* _content/DailyCheckIn/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification

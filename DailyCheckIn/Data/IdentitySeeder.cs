@@ -36,7 +36,7 @@ namespace DailyCheckIn.Data
                     ArabicName = "Admin",
                     Name = "Admin",
                     StartDate = DateOnly.FromDateTime(DateTime.UtcNow),
-                    HourlyRate = 0,
+                    HourlyRate = 8,
                 };
                 var result = await userManager.CreateAsync(adminUser, adminPassword);
                 if (result.Succeeded)

@@ -146,6 +146,7 @@ namespace DailyCheckIn.Controllers
             return Ok();
         }
 
+        [HttpPatch]
         public async Task<ActionResult> TimeOffEnds(DateTime dateTime)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -215,8 +216,9 @@ namespace DailyCheckIn.Controllers
             else
                 minutesWorked = AttendanceCalculator.CalculateDialyMinutesWorked(attendance);
 
+            var overTimeWorked = (minutesWorked - 480) < 0 ? 0 : (minutesWorked - 480);
 
-            var moneyEarned = AttendanceCalculator.CalculateDailyMoneyEarned(minutesWorked, user.HourlyRate);
+            var moneyEarned = AttendanceCalculator.CalculateDailyMoneyEarned(minutesWorked - overTimeWorked, overTimeWorked, user.HourlyRate);
 
             var TimeOffsForTheDay = attendance.TimeOffsForTheDay.ToList();
 

@@ -1,0 +1,5 @@
+﻿@model IEnumerable<DailyCheckIn.Models.DTO.DayReportSalary>
+@foreach (var day in Model)
+{
+    <partial name="_DayReportSalaryPartial" model="day" />
+}

@@ -1,0 +1,481 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\salary\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\salary\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\salary\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\salary\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\salary\\_dayreportsalarytablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\salary\\_dayreportsalarytablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\controllers\\salarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\controllers\\salarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\salary\\_dayreportsalarypartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\salary\\_dayreportsalarypartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\salary\\_dayreportsalarypartial.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\salary\\_dayreportsalarypartial.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\attendanceseeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\attendanceseeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\checkinmodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\checkinmodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\salarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\salarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\data\\attendancesforadmin.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\data\\attendancesforadmin.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\helpers\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\helpers\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\dayreportsalary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\dayreportsalary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\data\\identityseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\data\\identityseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\models\\dto\\dialyreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\models\\dto\\dialyreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\home\\_dayreportpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\home\\_dayreportpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\enums\\monthsenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\enums\\monthsenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\enums\\weaksenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\enums\\weaksenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\home\\_checkinpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\home\\_checkinpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\home\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\home\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|c:\\users\\quantum\\source\\repos\\dailycheckin\\dailycheckin\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E10ADF2-98E4-419A-8016-5613AA520462}|DailyCheckIn\\DailyCheckIn.csproj|solutionrelative:dailycheckin\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T08:50:13.494Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AttendanceSeedDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\AttendanceSeedDTO.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\AttendanceSeedDTO.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\AttendanceSeedDTO.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\AttendanceSeedDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T10:13:06.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CheckInModelDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\CheckInModelDTO.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\CheckInModelDTO.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\CheckInModelDTO.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\CheckInModelDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T10:13:05.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_DayReportSalaryTablePartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryTablePartial.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryTablePartial.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryTablePartial.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryTablePartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-13T10:11:28.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\Index.cshtml.css",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Salary\\Index.cshtml.css",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\Index.cshtml.css",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Salary\\Index.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-12T05:37:39.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AttendancesForAdmin.json",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Data\\AttendancesForAdmin.json",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Data\\AttendancesForAdmin.json",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Data\\AttendancesForAdmin.json",
+              "RelativeToolTip": "DailyCheckIn\\Data\\AttendancesForAdmin.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-12T05:13:14.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DailyCheckIn\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAwNwAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T13:23:04.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IdentitySeeder.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Data\\IdentitySeeder.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Data\\IdentitySeeder.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Data\\IdentitySeeder.cs",
+              "RelativeToolTip": "DailyCheckIn\\Data\\IdentitySeeder.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwB8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T12:49:54.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Program.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Program.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Program.cs",
+              "RelativeToolTip": "DailyCheckIn\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T09:30:59.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\UserLoginDTO.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\UserLoginDTO.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\UserLoginDTO.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\UserLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T09:26:34.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SalaryCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Helpers\\SalaryCalculator.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Helpers\\SalaryCalculator.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Helpers\\SalaryCalculator.cs",
+              "RelativeToolTip": "DailyCheckIn\\Helpers\\SalaryCalculator.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T09:08:51.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DialyReportDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\DialyReportDTO.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\DialyReportDTO.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\DialyReportDTO.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\DialyReportDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T21:20:17.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SalaryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\SalaryDTO.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\SalaryDTO.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\SalaryDTO.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\SalaryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T21:20:10.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DayReportSalary.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\DayReportSalary.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Models\\DTO\\DayReportSalary.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Models\\DTO\\DayReportSalary.cs",
+              "RelativeToolTip": "DailyCheckIn\\Models\\DTO\\DayReportSalary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T14:31:25.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_DayReportSalaryPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T08:40:37.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SalaryController.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Controllers\\SalaryController.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Controllers\\SalaryController.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Controllers\\SalaryController.cs",
+              "RelativeToolTip": "DailyCheckIn\\Controllers\\SalaryController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAowDMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T09:28:37.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\Index.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Salary\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\Index.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Salary\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T08:40:50.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_DayReportSalaryPartial.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml.css",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml.css",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml.css",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Salary\\_DayReportSalaryPartial.cshtml.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-04T03:47:19.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T08:47:14.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T15:58:55.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-04T03:59:48.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_DayReportPartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\_DayReportPartialView.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Home\\_DayReportPartialView.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\_DayReportPartialView.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Home\\_DayReportPartialView.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-04T03:43:18.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T15:58:55.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MonthsEnum.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Enums\\MonthsEnum.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Enums\\MonthsEnum.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Enums\\MonthsEnum.cs",
+              "RelativeToolTip": "DailyCheckIn\\Enums\\MonthsEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T09:29:51.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "WeaksEnum.cs",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Enums\\WeaksEnum.cs",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Enums\\WeaksEnum.cs",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Enums\\WeaksEnum.cs",
+              "RelativeToolTip": "DailyCheckIn\\Enums\\WeaksEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T09:32:56.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Index.cshtml.css",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Home\\Index.cshtml.css",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\Index.cshtml.css",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Home\\Index.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-04T03:55:39.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-04T03:55:50.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_CheckInPartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\_CheckInPartialView.cshtml",
+              "RelativeDocumentMoniker": "DailyCheckIn\\Views\\Home\\_CheckInPartialView.cshtml",
+              "ToolTip": "C:\\Users\\Quantum\\source\\repos\\DailyCheckIn\\DailyCheckIn\\Views\\Home\\_CheckInPartialView.cshtml",
+              "RelativeToolTip": "DailyCheckIn\\Views\\Home\\_CheckInPartialView.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T08:47:10.11Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
