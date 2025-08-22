@@ -1,0 +1,14 @@
+﻿.arrow-icon-hover {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+    .arrow-icon-hover:hover {
+        color: blue; /* hover color */
+        fill: blue;
+    }
+
+    .arrow-icon-hover:active {
+        color: black; /* hover color */
+        fill: black;
+    }

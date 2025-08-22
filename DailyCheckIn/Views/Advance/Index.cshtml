@@ -1,0 +1,181 @@
+﻿@model DailyCheckIn.Models.DTO.AdvancePageDTO
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="modal" tabindex="-1" id="addAdvanceModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <input type="text" id="IdInput" hidden/>
+                <div class="input-group mb-3">
+                    <label class="input-group-text col-3 text-center" for="inputGroupSelect01">Date</label>
+                    <input class="col-4" type="date" id="dateInput" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                </div>
+                <div class="input-group col-2 mb-3">
+                    <label class="input-group-text col-3 text-center" for="amountInput">Amount</label>
+                    <input class="col-4" type="number" id="amountInput" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" id="ConfirmBtn" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-2" id="deleteAdvanceModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <input type="text" id="deleteIdInput" hidden />
+                <h5>are you sure you want to delete the advance?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" id="deleteAdvanceBtn" class="btn btn-danger" onclick="AddNewAdvance()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-100 d-flex justify-content-center">
+    <section class="border p-0 m-0 w-100" style="max-width: 1200px;">
+        <div class="d-flex flex-row align-items-center border align-content-center width-400 p-2 justify-content-between date-container">
+            <svg id="leftArrowButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left arrow-icon-hover" viewBox="0 0 16 16">
+                <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+            </svg>
+            <p style="margin-bottom:0;">@Model.Year - @((DailyCheckIn.Enums.MonthsEnum)(Model.Month - 1))</p>
+            <svg id="rightArrowButton" xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-caret-right arrow-icon-hover" viewBox="0 0 16 16">
+                <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753" />
+            </svg>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success m-2" onclick="openAddNewAdvance()"> + </button>
+        </div>
+        <div id="partialContainer">
+            <partial name="_AdvanceTablePartial" model="@Model.Advances" />
+        </div>
+    </section>
+</div>
+<script>
+    const leftArrowButton = document.getElementById("leftArrowButton");
+    const rightArrowButton = document.getElementById("rightArrowButton")
+
+    rightArrowButton.onclick = function () {
+        const url = new URL(window.location.href);
+
+        var year = parseInt("@Model.Year");
+        var month = parseInt("@Model.Month");
+
+        month++;
+        if (month > 12) {
+            year++;
+            month = 1;
+        }
+
+        url.searchParams.set(
+            "Year",
+            year
+        );
+        url.searchParams.set(
+            "Month",
+            month
+        );
+
+        window.location.href = url.toString();
+    };
+
+    leftArrowButton.onclick = function () {
+        const url = new URL(window.location.href);
+
+        var year = parseInt("@Model.Year");
+        var month = parseInt("@Model.Month");
+
+        month--;
+        if (month < 1) {
+            year--;
+            month = 12;
+        }
+
+        url.searchParams.set(
+            "Year",
+            year
+        );
+        url.searchParams.set(
+            "Month",
+            month
+        );
+
+        window.location.href = url.toString();
+    };
+</script>
+<script>
+    window.onload = function () {
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+        localStorage.setItem("year", @Model.Year);
+        localStorage.setItem("month", @Model.Month);
+    }
+</script>
+
+<script>
+    function openAddNewAdvance() {
+        document.getElementById("ConfirmBtn").addEventListener('click', function () {
+                var date = $('#dateInput').val();
+                var amount = $('#amountInput').val();
+                $.ajax({
+                    url: "/Advance/AddNewAdvance",
+                    type: "POST",
+                    data: {
+                        date: date,
+                        amount: amount
+                    },
+                    success: function (html) {
+                        toastr["success"]("", "Advance Added seccessfully")
+                        $.ajax({
+                            url: "/Advance/AdvanceTable",
+                            type: "GET",
+                            data: {
+                                year: @Model.Year,
+                                month: @Model.Month
+                            },
+                            success: function (html) {
+                                $("#partialContainer").html(html);
+                            },
+                            error: function (xhr, status, error) {
+                                toastr["error"](error, "Error loading partial")
+                            }
+                        });            },
+                    error: function (xhr, status, error) {
+                        toastr["error"](error, "Error adding advance")
+                    }
+                });
+                addAdvanceModal.hide();
+        });
+        const addAdvanceModal = new bootstrap.Modal(document.getElementById('addAdvanceModal'));
+        addAdvanceModal.show();
+    }
+</script>

@@ -1,4 +1,4 @@
 *.log
-bin/
-obj/
+DailyCheckIn/bin/
+DailyCheckIn/obj/
 .vs/
