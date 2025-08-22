@@ -1,12 +1,13 @@
+using DailyCheckIn.Converters;
 using DailyCheckIn.Data;
+using DailyCheckIn.Interfaces;
 using DailyCheckIn.Models.Entities;
+using DailyCheckIn.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using DailyCheckIn.Interfaces;
-using DailyCheckIn.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+});
 
 builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(opt =>
 {

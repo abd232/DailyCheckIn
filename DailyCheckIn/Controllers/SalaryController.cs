@@ -106,10 +106,6 @@ namespace DailyCheckIn.Controllers
                     endingDate = startingDate.AddDays(7);
                 }
             }
-            else
-            {
-
-            }
             var attendances = await _DbContext.Attendances
                 .Where(a => a.UserId == user.Id && a.Date >= startingDate && a.Date < endingDate && !a.Deleted)
                 .Select(a => new Attendance

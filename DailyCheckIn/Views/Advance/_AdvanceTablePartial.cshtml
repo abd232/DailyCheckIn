@@ -1,0 +1,130 @@
+﻿@model IEnumerable<DailyCheckIn.Models.DTO.AdvanceDTO>  
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center" scope="col">#</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Amount</th>
+            <th class="text-center" style="width: 110px;" scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr> 
+                <td class="text-center" colspan="4">no advance taked this month!</td>
+            </tr>
+        }
+        @{
+            var rowCount = 1;
+            foreach (var advance in Model)
+            {
+                <tr>
+                    <th class="text-center" scope="row">@rowCount</th>
+                    <td class="text-center">@advance.Date.ToString("yyyy-MM-dd")</td>
+                    <td class="text-center">@advance.Amount</td>
+                    <td class="text-center d-flex flex-row justify-content-between" style="max-width:110px;">
+                        <button type="button" class="btn btn-primary" id="editAdvanceBtn-@rowCount">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-danger" id="deleteAdvanceBtn-@rowCount">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"></path>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                rowCount++;
+            }
+        }
+    </tbody>
+</table>
+@{
+    rowCount = 1;
+    foreach (var advance in Model)
+    {
+        <text>
+        <script>
+                    document.getElementById("editAdvanceBtn-@rowCount").addEventListener('click', function () {
+                            document.getElementById("IdInput").value = "@advance.Id";
+                            document.getElementById("dateInput").value = "@advance.Date.ToString("yyyy-MM-dd")";
+                            document.getElementById("amountInput").value = @advance.Amount;
+                            document.getElementById("ConfirmBtn").addEventListener('click', function () {
+                                $.ajax({
+                                    url: "/Advance/EditAdvance",
+                                    type: "PATCH",
+                                    contentType: "application/json",
+                                    data: JSON.stringify({
+                                        Id: document.getElementById("IdInput").value,
+                                        Date: document.getElementById("dateInput").value,
+                                        Amount: parseInt(document.getElementById("amountInput").value)
+                                    }),
+                                    success: function (html) {
+                                        toastr["info"]("", "Advance edited seccessfully")
+                                        $.ajax({
+                                            url: "/Advance/AdvanceTable",
+                                            type: "GET",
+                                            data: {
+                                                year: localStorage.getItem("year"),
+                                                month: localStorage.getItem("month")
+                                            },
+                                            success: function (html) {
+                                                $("#partialContainer").html(html);
+                                            },
+                                            error: function (xhr, status, error) {
+                                                toastr["error"](error, "Error loading partial")
+                                            }
+                                        });            
+                                    },
+                                    error: function (xhr, status, error) {
+                                        toastr["error"](error, "Error editing Advance")
+                                    }
+                                });
+                                EditAdvanceModal.hide();
+                            });
+                            const EditAdvanceModal = new bootstrap.Modal(document.getElementById('addAdvanceModal'));
+                            EditAdvanceModal.show();
+                    });
+                    document.getElementById("deleteAdvanceBtn-@rowCount").addEventListener('click', function () {
+                        const deleteAdvanceModal = new bootstrap.Modal(document.getElementById('deleteAdvanceModal'));
+                        document.getElementById("deleteIdInput").value = "@advance.Id";
+                        document.getElementById("deleteAdvanceBtn").addEventListener('click', function () {
+                            const id = document.getElementById("deleteIdInput").value;
+                            $.ajax({
+                                url: "/Advance/DeleteAdvance",
+                                type: "PATCH",
+                                data: ({
+                                    advanceId: id,
+                                }),
+                                success: function (html) {
+                                    toastr["success"]("", "Advance deleted seccessfully")
+                                    $.ajax({
+                                        url: "/Advance/AdvanceTable",
+                                        type: "GET",
+                                        data: {
+                                            year: localStorage.getItem("year"),
+                                            month: localStorage.getItem("month")
+                                        },
+                                        success: function (html) {
+                                            $("#partialContainer").html(html);
+                                        },
+                                        error: function (xhr, status, error) {
+                                            toastr["error"](error, "Error loading partial")
+                                        }
+                                    });            
+                                },
+                                error: function (xhr, status, error) {
+                                    toastr["error"](error, "Error deleting Advance")
+                                }
+                            });
+                            deleteAdvanceModal.hide();
+                        });
+                        deleteAdvanceModal.show();
+                    });
+        </script>
+        </text>
+        rowCount++;
+    }
+}
