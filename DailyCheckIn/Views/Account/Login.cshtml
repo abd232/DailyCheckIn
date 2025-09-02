@@ -1,25 +1,148 @@
-﻿<div class="d-flex flex-column justify-content-center align-items-center">
-    <h1>Login to your account</h1>
-    <div class="bg-light d-flex flex-row border-radise-50 col-3 mx-auto">
-        <buttom id="LoginButton" class="btn selected border-radise-50 bg-secondary-subtle col-6">Login</buttom>
-        <buttom id="SignInButton" class="btn bg-light border-radise-50 bg-secondary-subtle col-6">Sign in</buttom>
-    </div>
-    <form class="d-flex flex-column justify-content-lg-start align-content-center col-3" action="Login" method="post">
-        <label for="username">User name</label>
-        <input name="username" type="text" placeholder="User Name" class="border-radise-50" required />
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder="password" class="border-radise-50" required />
-        <button type="submit">Login</button>
-    </form>
-    <p>or sign in with</p>
+﻿<div class="signInLogincountainer">
+    <div class="form-container">
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title login">Login Form</div>
+                <div class="title signup">Signup Form</div>
+            </div>
+            <div class="form-container">
+                <div class="slide-controls">
+                    <input type="radio" name="slide" id="login" checked>
+                    <input type="radio" name="slide" id="signup">
+                    <label for="login" class="slide login">Login</label>
+                    <label for="signup" class="slide signup">Signup</label>
+                    <div class="slider-tab"></div>
+                </div>
+                <div class="form-inner">
+                    <form action="Login" method="post" class="login w-50">
+                        <pre>
+                        </pre>
+                        <div class="field">
+                            <input name="username" type="text" placeholder="Email Address" required>
+                        </div>
+                        <div class="field">
+                            <input name="password" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="pass-link"><a href="#">Forgot password?</a></div>
+                        <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input type="submit" value="Login">
+                        </div>
+                        <div class="signup-link">Create an account <a href="">Signup now</a></div>
+                    </form>
+                    <form id="registerForm" action="Register" method="post" class="signup w-50">
+                        <div class="signup-container">
+                            <div id="accountInformationContainer" class="step active">
+                                <h5 class="text-center">Account information</h5>
+                                <div class="field">
+                                    <input name="username" type="text" placeholder="Name" required>
+                                </div>
+                                <div class="field">
+                                    <input name="arabicName" type="text" placeholder="Arabic Name" required />
+                                </div>
+                                <div class="field">
+                                    <input name="email" type="text" placeholder="Email Address" required>
+                                </div>
+                                <div class="field">
+                                    <input name="password" type="password" placeholder="Password" required>
+                                </div>
+                                <div class="field">
+                                    <input name="confirmpassword" type="password" placeholder="Confirm password" required>
+                                </div>
 
-    <div class="d-flex flex-row border-radise-50 col-3 mx-auto">
-        <buttom id="LoginButton" class="btn selected m-2 border-radise-50 bg-secondary-subtle col-6">Google</buttom>
-        <buttom id="SignInButton" class="btn bg-light m-2 border-radise-50 bg-secondary-subtle col-6">Facebook</buttom>
+                                <button id="accountInformationBtn" class="btn btn-primary w-50 align-self-end mt-2 nextBtn" type="button"> Next </button>
+                            </div>
+                            <div id="workInformationContainer" class="step">
+                                <button id="backArrow" type="button" class="btn btn-light back-arrow" style="position:absolute;width:auto;height:auto;top:3px;left:5px;padding-top:0;border:0;background-color:white;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                    </svg>
+                                </button>
+                                <h5 class="text-center">Work information</h5>
+                                <div class="field">
+                                    <input name="hourlyRate" placeholder="Hourly rate" type="number" required />
+                                </div>
+                                <div class="field">
+                                    <input name="bonus" placeholder="Bonus" type="number" required />
+                                </div>
+                                <div class="field">
+                                    <input name="StartDate" type="date" required />
+                                </div>
+                                <div class="field btn mt-3">
+                                    <div class="btn-layer"></div>
+                                    <input type="submit" value="Signup">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
 
-<script>
 
+<script>
+    const loginText = document.querySelector(".title-text .login");
+    const loginForm = document.querySelector("form.login");
+    const signupForm = document.querySelector("form.signup");
+    const loginBtn = document.querySelector("label.login");
+    const signupBtn = document.querySelector("label.signup");
+    const signupLink = document.querySelector("form .signup-link a");
+    const accountInformationBtn = document.getElementById("accountInformationBtn");
+    const accountInformationContainer = document.getElementById("accountInformationContainer");
+    const workInformationContainer = document.getElementById("workInformationContainer");
+    const backArrow = document.getElementById("backArrow");
+    signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+    });
+
+    loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+    });
+
+    accountInformationBtn.onclick = (()=>{
+        accountInformationContainer.classList.remove("active");
+        accountInformationContainer.classList.add("prev");
+
+        workInformationContainer.classList.remove("next");
+        workInformationContainer.classList.add("active");
+    });
+
+    backArrow.onclick = (()=>{
+        workInformationContainer.classList.remove("active");
+        workInformationContainer.classList.add("next");
+
+        accountInformationContainer.classList.remove("prev");
+        accountInformationContainer.classList.add("active");
+    });
+
+    signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+    });
+</script>
+
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", async function(e) {
+        e.preventDefault(); // stop default form submission
+
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+            method: this.method,
+            body: formData
+        });
+
+        if (response.ok) {
+            // ✅ success
+            alert("Register success!");
+            window.location.href = "/dashboard";
+        } else {
+            // ❌ failure
+            alert("Register failed!");
+        }
+    });
 </script>

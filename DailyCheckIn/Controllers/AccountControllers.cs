@@ -101,8 +101,8 @@ namespace DailyCheckIn.Controllers
         [HttpPost("Logout")]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(); // logs out the cookie
-            return RedirectToAction("Index", "Login");
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
