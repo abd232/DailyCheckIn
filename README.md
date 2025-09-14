@@ -1,7 +1,7 @@
 # DailyCheckIn
 A website application that helps the employees of Tasfyeh Company (or any other company) to track there check in and check out from anywhare
-##Pages
-###Login/SignInPage
+## Pages
+### Login/SignInPage
 The default page if the user is not SignedIn or his token duration is expired
 
 the page may look good but its still need some work
@@ -9,7 +9,7 @@ the page may look good but its still need some work
 2-some changes in the UI.
 3-Add Account Information so the user can change view/edit his information.
 4-Add Forget password page.
-###Home Page
+### Home Page
 the default page if the user is signed in.
 <img width="1400" height="1050" alt="image" src="https://github.com/user-attachments/assets/1148e55e-1c06-461f-aa58-5b647f6fe4bd" />
 1-the user can change the day he is viewing (the default day is the current day) by using the arrows in the most upper section in the page body
@@ -19,7 +19,7 @@ the default page if the user is signed in.
 the page still needs some work:
 1-Some better animation
 2-rework the buttom section so the user can change is work section in the days that its not the current day.
-###Salary Page
+### Salary Page
 this page is important so the user can monter his work week by week and how much did he worked so far.
 <img width="1400" height="1050" alt="image" src="https://github.com/user-attachments/assets/115395b8-d5ae-4dd9-8d48-0bbefcefd5cf" />
 
@@ -35,7 +35,7 @@ this page showed the advances that the user take so far and give him the ability
 1-the user can change the months by the upper section of the page body by using the arrows.
 2-the user can add advances by using the plus sign and a dialog will new advance dialog will showup
 3-the user can edit or delete the advance by the two edit or delete button in the end of the advance row.
-##Future work
+## Future work
 1-make the changes needed to the pages
 2-add arabic language option to the page.
 3-Make Admin page that can see the user activity in the website
