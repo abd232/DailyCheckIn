@@ -29,7 +29,7 @@ this page is important so the user can monter his work week by week and how much
 4. the buttom section shows the hours that he worked that month and the overtime hours and the money he earned by them.
 the page still needs some work:
 1. the salary must subtract the advances that the user takes.
-###Advance Page
+### Advance Page
 this page showed the advances that the user take so far and give him the ability to take advances.
 <img width="1400" height="1050" alt="image" src="https://github.com/user-attachments/assets/9315e6a8-7296-45c4-9dcb-eab1a93c260e" />
 1. the user can change the months by the upper section of the page body by using the arrows.
@@ -38,5 +38,5 @@ this page showed the advances that the user take so far and give him the ability
 ## Future work
 1. make the changes needed to the pages
 2. add arabic language option to the page.
-3-Make Admin page that can see the user activity in the website
-4-deploy the website
+3. Make Admin page that can see the user activity in the website
+4. deploy the website
