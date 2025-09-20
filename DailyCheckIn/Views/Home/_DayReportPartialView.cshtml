@@ -15,21 +15,3 @@
         <p>00:00</p>
     </div>
 </section>
-
-<script>
-    const svg = document.getElementById("scanner");
-    const scanRect = document.getElementById("scan-rect");
-
-    svg.addEventListener("click", () => {
-        $.ajax({
-            url: "/Home/LoadPartial",
-            type: "GET",
-            success: function (result) {
-                $("#partialContainer").html(result);
-            },
-            error: function () {
-                alert("Error loading partial.");
-            }
-        });
-    });
-</script>

@@ -1,19 +1,5 @@
-﻿@keyframes openYourHeart {
-    from {
-        height: 0;
-    }
-
-    to {
-        height: 200px;
-    }
-}
-
-.checkContainer {
+﻿.checkContainer {
     width: 400px;
-}
-
-.animate-scan {
-    animation: openYourHeart 5s forwards;
 }
 
 .arrow-icon-hover {

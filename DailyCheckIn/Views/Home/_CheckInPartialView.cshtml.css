@@ -1,0 +1,71 @@
+﻿    @keyframes scan {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: 200px;
+        }
+    }
+
+.animate-scan {
+    animation: scan 4s normal forwards;
+}
+
+
+.time-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+    .time-input-container .time-input{
+        width: 100%;
+        height: 40px;
+        background-color: white;
+        color: black;
+        margin-bottom:1px;
+    }
+
+.custom-select.dark-mode-elegance {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+}
+
+    .custom-select.dark-mode-elegance select {
+        position: relative;
+        align-self: center;
+        padding: 10px;
+        color: black;
+        border: 1px inset #29394A;
+        margin: auto;
+        width: 100%;
+        text-align:center;
+        background-color: white;
+        border-radius: 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+        .custom-select.dark-mode-elegance::after {
+            content: '▼';
+            color: black;
+            border-radius: 10px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+.fingerprint {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;  
+}

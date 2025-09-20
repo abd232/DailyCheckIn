@@ -1,18 +1,206 @@
 ﻿@model DailyCheckIn.Models.DTO.CheckInModelDTO
 <section class="w-100 border justify-content-center align-items-sm-center">
-    <input class="col-lg-12 text-center" type="time" value="16:30" />
-    <select class="custom-select m-2 border-3">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
-    <svg class="d-flex flex-column align-content-center" height="400" width="300" xmlns="http://www.w3.org/2000/svg" id="scanner">
-        <clipPath id="myClip">
-            <rect id="scan-rect" width="150" height="0" x="80" y="100" fill="green"></rect>
-        </clipPath>
-        <ellipse id="ellipse" rx="55" ry="82" cx="150" cy="200" style="fill:#F4F6F8;stroke:black;stroke-width:2px;cursor:pointer;" />
-        <use clip-path="url(#myClip)" href="#ellipse" fill="red" />
-        <image x="100" y="0" width="100" height="400" pointer-events="none" href="@Url.Content("~/fingerprint_png.png")"></image>
+    <div class="time-input-container">
+        <input id="timeInput" class="col-lg-12 text-center time-input" type="time" value="16:30" />
+    </div>
+
+    <div class="custom-select-container">
+        <div class="custom-select dark-mode-elegance">
+            <select id="dark-mode-elegance">
+            </select>
+        </div>
+    </div>
+    <svg class="fingerprint" height="400" width="300" xmlns="http://www.w3.org/2000/svg" id="scanner" pointer-events="fill"
+          cursor="pointer">
+        <defs>
+            <mask id="myClip">
+                <!-- Black background = hide everything -->
+                <rect width="100%" height="100%" fill="black" />
+                <!-- White rect = visible scanning area -->
+                <rect width="130" height="0" x="130" y="100" fill="white" >
+                    <animate id="scan-anim" attributeName="height"
+                             begin="indefinite"
+                             dur="1s"
+                             from="0"
+                             to="200px"
+                             fill="freeze" />
+                </rect>
+            </mask>
+        </defs>
+        <ellipse id="ellipseForBorder" rx="57" ry="83" cx="200" cy="200" fill="none" stroke="black" stroke-width="2px"/>
+        <ellipse id="baseEllipse" rx="57" ry="83" cx="200" cy="200"
+                 fill="#FB4141" stroke="black" stroke-width="2px" />
+        <image id="fingerPrintImage" x="150" y="0" width="100" height="400" href="@Url.Content("~/fingerprint_png.png")"></image>
     </svg>
 </section>
+<script>
+    const UserLoginStatus = Object.freeze({
+        CheckedIn : 1,
+        NotCheckedIn : 2,
+        InTimeOff : 3,
+    });
+
+    const baseEllipse = document.getElementById("baseEllipse");
+
+    var userStatus = null;
+
+    @switch(Model.UserStatus) 
+    {
+        case DailyCheckIn.Enums.UserCheckInStatusEnum.CheckedIn:
+            <text>
+                userStatus = UserLoginStatus.CheckedIn;
+            </text>
+            break;
+        case DailyCheckIn.Enums.UserCheckInStatusEnum.NotCheckedIn:
+            <text>
+                userStatus = UserLoginStatus.NotCheckedIn;
+            </text>
+            break;
+        case DailyCheckIn.Enums.UserCheckInStatusEnum.InTimeOff:
+            <text>
+                userStatus = UserLoginStatus.InTimeOff;
+            </text>
+            break;
+    }
+    userLoginStatusChanged(userStatus);
+
+    function userLoginStatusChanged(userStatus){
+        console.log(userStatus);
+        const selectElement = document.getElementById("dark-mode-elegance");
+        const scanner = document.getElementById("scanner");
+        if(userStatus == UserLoginStatus.CheckedIn)
+        {
+            baseEllipse.setAttribute("fill", "#78C841");
+            const checkOutOption = document.createElement("option");
+            checkOutOption.text="CheckOut";
+            checkOutOption.value="checkOut";
+            selectElement.appendChild(checkOutOption);
+            const TimeOffStart = document.createElement("option");
+            TimeOffStart.text="TimeOff";
+            TimeOffStart.value="timeOff";
+            selectElement.appendChild(TimeOffStart);
+            scanner.onclick = (() => {
+                var timeValue = $("#timeInput").val();
+                var today = new Date().toISOString().split("T")[0];
+                var dateTimeInput = today + "T" + timeValue;
+                if(selectElement.value == "checkOut"){
+                    $.ajax({
+                        url: "/Home/CheckOut",
+                        type: "POST",
+                        data: {
+                            dateTime : dateTimeInput
+                        },
+                        success: function (html) {
+                            fingerPrintClicked(selectElement);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error loading partial:", error);
+                        }
+                    });
+                }
+                else if(selectElement.value == "timeOff")
+                {
+                    $.ajax({
+                        url: "/Home/StartTimeOff",
+                        type: "POST",
+                        data: {
+                            dateTime : dateTimeInput
+                        },
+                        success: function (html) {
+                            fingerPrintClicked(selectElement);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error loading partial:", error);
+                        }
+                    });
+                }
+
+            });
+        }
+        else if(userStatus == UserLoginStatus.NotCheckedIn)
+        {
+            baseEllipse.setAttribute("fill", "#FB4141");
+            const checkIn = document.createElement("option");
+            checkIn.text="CheckIn";
+            checkIn.value="checkIn";
+            selectElement.appendChild(checkIn);
+            scanner.onclick = (() => {
+                var timeValue = $("#timeInput").val();
+                var today = new Date().toISOString().split("T")[0];
+                var dateTimeInput = today + "T" + timeValue;
+                $.ajax({
+                    url: "/Home/CheckIn",
+                    type: "POST",
+                    data: {
+                        dateTime : dateTimeInput
+                    },
+                    success: function (html) {
+                        fingerPrintClicked(selectElement);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error loading partial:", error);
+                    }
+                });
+            });
+
+        }
+        else if(userStatus == UserLoginStatus.InTimeOff)
+        {
+            baseEllipse.setAttribute("fill", "#FF9B2F");
+            const checkOutOption = document.createElement("option");
+            checkOutOption.text="CheckOut";
+            checkOutOption.value="checkOut";
+            selectElement.appendChild(checkOutOption);
+            const TimeOffEnd = document.createElement("option");
+            TimeOffEnd.text="End timeOff";
+            TimeOffEnd.value="timeOffEnd";
+            selectElement.appendChild(TimeOffEnd);
+        }
+    }
+
+    function fingerPrintClicked(selectElement){
+        const svg = document.getElementById("scanner");
+
+        const ellipse = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+
+        const baseEllipse = document.getElementById("baseEllipse");
+
+        ellipse.setAttribute("id", "NewEllipse");
+        ellipse.setAttribute("rx", "57");
+        ellipse.setAttribute("ry", "83");
+        ellipse.setAttribute("cx", "200");
+        ellipse.setAttribute("cy", "200");
+
+        ellipse.setAttribute("mask", "url(#myClip)");
+        ellipse.setAttribute("stroke", "black");
+        ellipse.setAttribute("stroke-width", "2px");
+       
+        switch(selectElement.value) {
+            case "checkIn":
+                ellipse.setAttribute("fill", "#78C841");
+                break;
+            case "checkOut":
+                ellipse.setAttribute("fill", "#FB4141");
+                break;
+            case "timeOff":
+                ellipse.setAttribute("fill", "#FF9B2F");
+                break;
+            case "timeOffEnd":
+                ellipse.setAttribute("fill", "#78C841");
+                break;
+        }
+
+        const lastChild = svg.lastElementChild;
+
+        svg.insertBefore(ellipse, lastChild);
+
+        const anim = document.getElementById("scan-anim");
+        anim.beginElement();
+
+        setTimeout(() => {
+           baseEllipse.remove();
+           ellipse.removeAttribute("mask");
+           ellipse.setAttribute("id", "baseEllipse");
+        }, 2000);
+    }
+</script>
