@@ -2,13 +2,15 @@
 A website application that helps the employees of Tasfyeh Company (or any other company) to track there check in and check out from anywhare
 ## Pages
 ### Login/SignInPage
-The default page if the user is not SignedIn or his token duration is expired
+This default page if the user is not SignedIn or his token duration is expired
+<img width="1400" height="1050" alt="image" src="https://github.com/user-attachments/assets/8a343c9a-a498-496e-9091-217b48734978" />
 
 the page may look good but its still need some work
 1. error handeling in SignIn section
 2. some changes in the UI.
 3. Add Account Information so the user can change view/edit his information.
 4. Add Forget password page.
+5. Adding signIn option using google or facebook
 ### Home Page
 the default page if the user is signed in.
 <img width="1400" height="1050" alt="image" src="https://github.com/user-attachments/assets/1148e55e-1c06-461f-aa58-5b647f6fe4bd" />
