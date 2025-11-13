@@ -1,17 +1,236 @@
-﻿@model DailyCheckIn.Models.DTO.DialyReportDTO
+﻿@model DailyCheckIn.Models.DTO.DailyReportDTO
 
-<section class="w-100 border">
+<section class="w-100 border border-top-0">
+
+    <fieldset class="border border-bottom-0">
+        <legend>CheckIn Time</legend>
+        <div class="d-flex flex-row w-100">
+            <div class="ms-3">
+                @if (Model.CheckedInTime.HasValue)
+                {
+                    @Model.CheckedInTime.Value.ToString("HH:mm")
+                }
+                else
+                {
+                    <p>--:--</p>
+                }
+            </div>
+            <button type="button" class="btn btn-primary add_button ms-auto p-1" onclick="editCheckInTime()">
+                <i class="bi bi-pencil" style="font-size:14px"></i>
+                <span class="visually-hidden">Button</span>
+            </button>
+        </div>
+    </fieldset>
+    <fieldset class="border border-bottom-0">
+        <legend>Timeoffs</legend>
+        <div class="d-flex flex-column w-100">
+            <button type="button" class="btn btn-success add_button ms-auto" onclick="editTimeOff('')">
+                <i class="bi bi-plus" style="font-size:18px"></i>
+                <span class="visually-hidden">Button</span>
+            </button>
+
+            @foreach(var timeOff in Model.TimeOffDTOs)
+            {
+                <div class="d-flex flex-row w-100">
+                    <div class="d-flex flex-row col-8 justify-content-around">
+                        <p>@timeOff.TimeOffStart.ToString("HH:mm")</p>
+                        @if (timeOff.TimeOffEnd.HasValue)
+                        {
+                            <p>@timeOff.TimeOffEnd.Value.ToString("HH:mm")</p>
+                        }
+                        else
+                        {
+                            <p>--:--</p>
+                        }
+                    </div>
+                    <div class="d-flex flex-row col justify-content-around" onclick="editTimeOff(@timeOff.Id)">
+                        <button type="button" class="btn btn-primary editTimeOffbutton" id="editAdvanceBtn()">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="editTimeOff(@timeOff.Id)" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </fieldset>
+    <fieldset class="border">
+        <legend>Checkout Time</legend>
+        <div class="d-flex flex-row w-100">
+            <div class="ms-3">
+                @if (Model.CheckedOutTime.HasValue)
+                {
+                    @Model.CheckedOutTime.Value.ToString("HH:mm")
+                }
+                else
+                {
+                    <p>--:--</p>
+                }
+            </div>
+            <button type="button" class="btn btn-primary add_button ms-auto p-1" onclick="editCheckOutTime()">
+                <i class="bi bi-pencil" style="font-size:14px"></i>
+                <span class="visually-hidden">Button</span>
+            </button>
+        </div>
+    </fieldset>
+    @{
+        int totalMinutes = (int) Model.TotalMinutesWorked;
+        string hours, minutes, overTimeHours, overTimeMinutes;
+        if(totalMinutes > 480)
+        {
+            hours = "08";
+            minutes = "00";
+            overTimeHours = "0" + (int)(totalMinutes - 480) / 60;
+            if ((totalMinutes - 480) / 60 < 10)
+                overTimeMinutes = "0" + (int)(totalMinutes - 480) / 60;
+            else
+                overTimeMinutes = "" + (int)(totalMinutes - 480) / 60;
+        }
+        else
+        {
+            overTimeHours = "00";
+            overTimeMinutes = "00";
+            hours = "0" + (int)(totalMinutes) / 60;
+            if ((totalMinutes) / 60 < 10)
+                minutes = "0" + (int)(totalMinutes) / 60;
+            else
+                minutes = "" + (int)(totalMinutes) / 60;
+        }
+    }
     <div class="d-flex flex-row justify-content-between p-3 border">
         <p>Hours worked</p>
-        <p>00:00</p>
+        <p>@hours:@minutes</p>
     </div>
     <div class="d-flex flex-row justify-content-between p-3 border">
         <p>Over time hours worked</p>
-        <p>00:00</p>
+        <p>@overTimeHours:@overTimeMinutes</p>
     </div>
 
     <div class="d-flex flex-column align-items-center m-5">
-        <p>Total</p>
-        <p>00:00</p>
+        <p>Total Money Earned</p>
+        <p>@Math.Round(Model.TotalMoneyEarned, 2)</p>
     </div>
 </section>
+
+<script>
+    function editCheckInTime() {
+        const editCheckInTimeModal = new bootstrap.Modal(document.getElementById('editCheckInTimeModal'));
+        const confirmBtn = document.getElementById("checkInConfirmBtn");
+        
+        confirmBtn.addEventListener('click', () => {
+            const checkInInput = document.getElementById("CheckInInput");
+            if(checkInInput.value == "")
+               toastr["error"]("Check In time field can't be null");
+            else{
+                $.ajax({
+                    url: "/Home/CheckIn",
+                    type: "POST",
+                    data: {
+                        dateTime : checkInInput.value
+                    },
+                    success: function (html) {
+                        toastr["success"]("CheckIn successed");
+                        editCheckInTimeModal.hide();
+                        reloadDayReportPartialView();
+                    },
+                    error: function (xhr, status, error) {
+                        toastr["error"](error, "Error In Checking In")
+                    }
+                });
+            }
+
+        });
+        editCheckInTimeModal.show();
+    }
+
+    function editCheckOutTime() {
+        const editCheckOutTimeModal = new bootstrap.Modal(document.getElementById('editCheckOutTimeModal'));
+        const confirmBtn = document.getElementById("checkOutConfirmBtn");
+
+        confirmBtn.addEventListener('click', () => {
+            const checkOutInput = document.getElementById("CheckOutInput");
+            if(checkOutInput.value == "")
+               toastr["error"]("Check Out time field can't be null");
+            else{
+                $.ajax({
+                    url: "/Home/CheckOut",
+                    type: "POST",
+                    data: {
+                        dateTime : checkOutInput.value
+                    },
+                    success: function (html) {
+                        toastr["success"]("CheckOut successed")
+                        editCheckOutTimeModal.hide();
+                        reloadDayReportPartialView();
+                    },
+                    error: function (xhr, status, error) {
+                        toastr["error"](error, "Error In Checking Out")
+                    }
+                });
+            }
+
+        });
+        editCheckOutTimeModal.show();
+    }
+
+    function editTimeOff(Id) {
+        const editTimeOffModal = new bootstrap.Modal(document.getElementById('editTimeOffModal'));
+        const confirmBtn = document.getElementById("TimeOffConfirmBtn");
+
+        confirmBtn.addEventListener('click', () => {
+            const TimeOffStartInput = document.getElementById("TimeOffStartInput");
+            const TimeOffEndInput = document.getElementById("TimeOffEndInput");
+            if(TimeOffStartInput.value == ""){
+                toastr["error"]("Check Out time field can't be null");
+            } 
+            else
+            {
+                const urlParams = new URLSearchParams(window.location.search);
+
+                // Try to get the value of "DayDate" from the query string
+                let dayDate = urlParams.get("DayDate");
+
+                // If it's not found, use the current date in YYYY-MM-DD format
+                if (!dayDate) {
+                    const today = new Date();
+                    const year = today.getFullYear();
+                    const month = String(today.getMonth() + 1).padStart(2, "0");
+                    const day = String(today.getDate()).padStart(2, "0");
+                    dayDate = `${year}-${month}-${day}`;
+                }
+
+                const dayDateTime = new Date(dayDate).toISOString();
+
+                const ajaxData = {
+                    dateTime : dayDateTime,
+                    timeOffStart : TimeOffStartInput.value
+                };
+
+                if(TimeOffEndInput.value != "")
+                    ajaxData["timeOffEnd"] = TimeOffEndInput.value;
+
+                if(!(!Id || Id == ""))
+                    ajaxData["Id"] = Id;
+
+                $.ajax({
+                    url: "/Home/TimeOff",
+                    type: "POST",
+                    data: ajaxData,
+                    success: function (html) {
+                        toastr["success"]("TimeOff successed")
+                        editTimeOffModal.hide();
+                        reloadDayReportPartialView();
+                    },
+                    error: function (xhr, status, error) {
+                        toastr["error"](xhr.responseText, "Error In TimeOff")
+                    }
+                });
+            }
+        });
+        editTimeOffModal.show();
+    }
+
+</script>

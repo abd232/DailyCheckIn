@@ -1,7 +1,7 @@
 ﻿@model DailyCheckIn.Models.DTO.CheckInModelDTO
-<section class="w-100 border justify-content-center align-items-sm-center">
+<section class="w-100 border justify-content-center align-items-sm-center border-bottom-0">
     <div class="time-input-container">
-        <input id="timeInput" class="col-lg-12 text-center time-input" type="time" value="16:30" />
+        <input id="timeInput" class="col-lg-12 text-center time-input" type="time" />
     </div>
 
     <div class="custom-select-container">
@@ -34,6 +34,13 @@
     </svg>
 </section>
 <script>
+
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+    document.getElementById('timeInput').value = `${hours}:${minutes}`;
+
     const UserLoginStatus = Object.freeze({
         CheckedIn : 1,
         NotCheckedIn : 2,
@@ -62,10 +69,10 @@
             </text>
             break;
     }
+
     userLoginStatusChanged(userStatus);
 
     function userLoginStatusChanged(userStatus){
-        console.log(userStatus);
         const selectElement = document.getElementById("dark-mode-elegance");
         const scanner = document.getElementById("scanner");
         if(userStatus == UserLoginStatus.CheckedIn)
@@ -92,6 +99,8 @@
                         },
                         success: function (html) {
                             fingerPrintClicked(selectElement);
+                            userStatus = UserLoginStatus.NotCheckedIn;
+                            reloadDayReportPartialView();
                         },
                         error: function (xhr, status, error) {
                             console.error("Error loading partial:", error);
@@ -108,6 +117,8 @@
                         },
                         success: function (html) {
                             fingerPrintClicked(selectElement);
+                            userStatus = UserLoginStatus.InTimeOff;
+                            reloadDayReportPartialView();
                         },
                         error: function (xhr, status, error) {
                             console.error("Error loading partial:", error);
@@ -136,6 +147,8 @@
                     },
                     success: function (html) {
                         fingerPrintClicked(selectElement);
+                        userStatus = UserLoginStatus.CheckedIn;
+                        reloadDayReportPartialView();
                     },
                     error: function (xhr, status, error) {
                         console.error("Error loading partial:", error);
@@ -180,6 +193,7 @@
                 ellipse.setAttribute("fill", "#78C841");
                 break;
             case "checkOut":
+                console.log("hello");
                 ellipse.setAttribute("fill", "#FB4141");
                 break;
             case "timeOff":
@@ -201,6 +215,9 @@
            baseEllipse.remove();
            ellipse.removeAttribute("mask");
            ellipse.setAttribute("id", "baseEllipse");
+           userLoginStatusChanged(userStatus);
         }, 2000);
+
+
     }
 </script>

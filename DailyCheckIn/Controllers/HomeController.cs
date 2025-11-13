@@ -1,16 +1,17 @@
+using DailyCheckIn.Data;
+using DailyCheckIn.Enums;
+using DailyCheckIn.Helpers;
 using DailyCheckIn.Models;
 using DailyCheckIn.Models.DTO;
 using DailyCheckIn.Models.Entities;
-using DailyCheckIn.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using System;
 using System.Diagnostics;
 using System.Security.Claims;
-using DailyCheckIn.Data;
-using Microsoft.VisualBasic;
-using Microsoft.EntityFrameworkCore;
-using DailyCheckIn.Enums;
 
 namespace DailyCheckIn.Controllers
 {
@@ -28,7 +29,7 @@ namespace DailyCheckIn.Controllers
             _DbContext = DbContext;
         }
 
-        public async Task<ActionResult<DialyReportDTO>> Index(DateOnly? DayDate)
+        public async Task<ActionResult<DailyReportDTO>> Index(DateOnly? DayDate)
         {
             if (DayDate == null) {
                 DayDate = DateOnly.FromDateTime(DateTime.Now);
@@ -48,19 +49,67 @@ namespace DailyCheckIn.Controllers
                 return NotFound();
 
             var attendance = _DbContext.Attendances
-                .Include(a => a.TimeOffsForTheDay.Where(t => !t.Deleted))
-                .FirstOrDefault(a => a.UserId == guidUserId && a.Date == DayDate);
+                .FirstOrDefault(a => a.UserId == guidUserId && a.Date == DayDate && !a.Deleted);
 
-            var forNow = new DateTime();
+            DateTime? forNow = null;
+            var TimeOffsForTheDay = new List<TimeOff>();
 
-            if (attendance == null || attendance.CheckOut == null)
+            if (attendance != null)
+                TimeOffsForTheDay = _DbContext.TimeOffs
+                    .Where(t => t.AttendanceDayId == attendance.Id && !t.Deleted)
+                    .OrderBy(t => t.TimeOffStart).ToList();
+
+            if (attendance == null 
+                || (attendance.CheckOut == null 
+                && attendance.Date == DateOnly.FromDateTime(DateTime.Now)))
                 forNow = DateTime.Now;
 
-            var dialyReportDTO = DayReport(DayDate.Value, user, forNow);
 
-            var checkInInformation = CheckInInformation(attendance, DayDate.Value);
+            var DailyReportDTO = DayReport(DayDate.Value, attendance, TimeOffsForTheDay, user.HourlyRate,forNow);
 
-            return View(new HomeModelDTO{ DayDate = DayDate.Value, CheckInModelDTO = checkInInformation, DialyReportDTO = dialyReportDTO });
+            var checkInInformation = CheckInInformation(attendance, TimeOffsForTheDay, DayDate.Value);
+
+            return View(new HomeModelDTO{ DayDate = DayDate.Value, CheckInModelDTO = checkInInformation, DailyReportDTO = DailyReportDTO });
+        }
+
+        public async Task<ActionResult<DailyReportDTO>> DayReportPartialView(DateOnly? DayDate)
+        {
+            if (DayDate == null)
+            {
+                DayDate = DateOnly.FromDateTime(DateTime.Now);
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId == null)
+                return Unauthorized();
+
+            var guidUserId = Guid.Parse(userId);
+
+            var user = await _DbContext.Users
+                .FirstOrDefaultAsync(u => u.Id == guidUserId && !u.Deleted);
+
+            if (user == null)
+                return NotFound();
+
+            var attendance = _DbContext.Attendances
+                .FirstOrDefault(a => a.UserId == guidUserId && a.Date == DayDate && !a.Deleted);
+
+            DateTime? forNow = null;
+            var TimeOffsForTheDay = new List<TimeOff>();
+
+            if (attendance != null)
+                TimeOffsForTheDay = _DbContext.TimeOffs
+                    .Where(t => t.AttendanceDayId == attendance.Id && !t.Deleted)
+                    .OrderBy(t => t.TimeOffStart).ToList();
+
+            if (attendance == null
+                || (attendance.CheckOut == null
+                && attendance.Date == DateOnly.FromDateTime(DateTime.Now)))
+                forNow = DateTime.Now;
+
+            var DailyReportDTO = DayReport(DayDate.Value, attendance,TimeOffsForTheDay,user.HourlyRate,forNow);
+            return PartialView("_DayReportPartialView", DailyReportDTO);
         }
 
         [HttpPost]
@@ -93,7 +142,7 @@ namespace DailyCheckIn.Controllers
                     CreatedOn = DateTime.Now,
                 };
 
-                await _DbContext.Attendances.AddAsync(attendance);
+                var kk = await _DbContext.Attendances.AddAsync(attendance);
             }
             else
             {
@@ -136,13 +185,10 @@ namespace DailyCheckIn.Controllers
                 return NotFound();
 
             var attendance = _DbContext.Attendances
-                .FirstOrDefault(a => a.UserId == guidUserId && !a.Deleted);
+                .FirstOrDefault(a => a.UserId == guidUserId && !a.Deleted && a.Date == dateOnly);
 
             if (attendance == null)
                 return NotFound();
-
-            if (attendance.CheckOut != null)
-                return BadRequest("You Already Checked Out!");
 
             if (DateOnly.FromDateTime(dateTime) != attendance.Date
                 && DateOnly.FromDateTime(dateTime) != attendance.Date.AddDays(1))
@@ -169,23 +215,28 @@ namespace DailyCheckIn.Controllers
             if (userId == null)
                 return Unauthorized();
 
+            var guidUserId = Guid.Parse(userId);
+
+            var dateOnly = DateOnly.FromDateTime(dateTime);
+
             var user = await _DbContext.Users
-                 .Include(u => u.Attendances.Where(a => a.Date == DateOnly.FromDateTime(dateTime) && !a.Deleted))
-                 .ThenInclude(a => a.TimeOffsForTheDay)
-                 .Where(u => u.Id == Guid.Parse(userId) && !u.Deleted)
-                 .FirstOrDefaultAsync();
+                 .FirstOrDefaultAsync(u => u.Id == guidUserId && !u.Deleted);
 
             if (user == null)
                 return NotFound("User not found");
 
-            var attendance = user.Attendances.FirstOrDefault();
+            var attendance = await _DbContext.Attendances
+                .FirstOrDefaultAsync(a => a.UserId == guidUserId && a.Date == dateOnly && !a.Deleted);
 
             if (attendance == null)
                 return NotFound("There is no attendance for the date you want to make Timeoff In");
 
-            var lastTimeOff = attendance.TimeOffsForTheDay.LastOrDefault();
+            var lastTimeOff = await _DbContext.TimeOffs
+                .Where(t => t.AttendanceDayId == attendance.Id && !t.Deleted)
+                .OrderByDescending(t => t.TimeOffStart)
+                .FirstOrDefaultAsync();
 
-            if (lastTimeOff != null && !lastTimeOff.Deleted && !lastTimeOff.TimeOffEnd.HasValue)
+            if (lastTimeOff != null && !lastTimeOff.TimeOffEnd.HasValue)
                 return BadRequest("You have to close the last timeoff before starting a new one");
 
             var newTimeOff = new TimeOff { AttendanceDay = attendance, AttendanceDayId = attendance.Id,
@@ -195,8 +246,90 @@ namespace DailyCheckIn.Controllers
                 CreatedBy = user,
                 CreatedOn = DateTime.Now,
             };
+
             _DbContext.TimeOffs.Add(newTimeOff);
             await _DbContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> TimeOff(DateTime dateTime,TimeOnly timeOffStart, TimeOnly? timeOffEnd,Guid? Id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId == null)
+                return Unauthorized();
+
+            var guidUserId = Guid.Parse(userId);
+
+            var dateOnly = DateOnly.FromDateTime(dateTime);
+
+            var user = await _DbContext.Users
+                 .FirstOrDefaultAsync(u => u.Id == guidUserId && !u.Deleted);
+
+            if (user == null)
+                return NotFound("User not found");
+
+            var attendance = await _DbContext.Attendances
+                .FirstOrDefaultAsync(a => a.UserId == guidUserId && a.Date == dateOnly && !a.Deleted);
+
+            if (attendance == null)
+                return BadRequest("There is no attendance for the date you want to make Timeoff In");
+
+            Models.Entities.TimeOff? timeoff;
+
+            if (Id.HasValue)
+            {
+                timeoff = await _DbContext.TimeOffs.FindAsync(Id.Value);
+                if (timeoff == null)
+                    return NotFound("the TimeOff did not found");
+            }
+            else
+            {
+                timeoff = new TimeOff
+                {
+                    Id = new Guid(),
+                    AttendanceDay = attendance,
+                    AttendanceDayId = attendance.Id,
+                    CreatedBy = user,
+                    CreatedById = user.Id,
+                    CreatedOn = DateTime.Now,
+                    Date = DateOnly.FromDateTime(dateTime),
+                    TimeOffStart = timeOffStart,
+                    TimeOffEnd = timeOffEnd
+                };
+            }
+
+            if (!TimeOffDuringTheAttendanceTime(attendance, timeoff))
+                return BadRequest("the time off should be in the checkIn time!");
+
+            var timeOffsInThatDay = await _DbContext.TimeOffs
+                .Where(t => t.AttendanceDayId == attendance.Id && !t.Deleted)
+                .OrderBy(t => t.TimeOffStart)
+                .ToListAsync();
+
+            if (TimeOffDuringOtherTimeOff(timeOffsInThatDay, timeoff))
+                return BadRequest("the timeOff can't be in other timeoffs");
+            if (!Id.HasValue)
+            {
+                await _DbContext.TimeOffs.AddAsync(timeoff);
+            }
+            else
+            {
+                timeoff.TimeOffStart = timeOffStart;
+                if(timeOffEnd.HasValue)
+                    timeoff.TimeOffEnd = timeOffEnd;
+
+                timeoff.ModifiedBy = user;
+                timeoff.ModifiedById = user.Id;
+                timeoff.ModifiedOn = DateTime.Now;
+            }
+
+            int result = await _DbContext.SaveChangesAsync();
+
+            if(result <= 0)
+                return StatusCode(500, "Insert failed!");
 
             return Ok();
         }
@@ -236,9 +369,9 @@ namespace DailyCheckIn.Controllers
             return Ok();
         }
 
-        private CheckInModelDTO CheckInInformation(Attendance? attendance, DateOnly DayDate)
+        private CheckInModelDTO CheckInInformation(Attendance? attendance,List<TimeOff> TimeOffsForTheDay, DateOnly DayDate)
         {
-            var LastTimeOff = attendance?.TimeOffsForTheDay?.LastOrDefault();
+            var LastTimeOff = TimeOffsForTheDay.LastOrDefault();
 
             UserCheckInStatusEnum userCheckInStatus;
 
@@ -249,32 +382,33 @@ namespace DailyCheckIn.Controllers
             else if(attendance.CheckOut == null)
                 userCheckInStatus = UserCheckInStatusEnum.CheckedIn;
             else
-                userCheckInStatus = UserCheckInStatusEnum.NotCheckedIn;
+                userCheckInStatus = UserCheckInStatusEnum.CheckedOut;
 
             return new CheckInModelDTO(TimeOnly.FromDateTime(DateTime.Now), userCheckInStatus );
         }
 
-        private DialyReportDTO DayReport(DateOnly DayDate, AppUser user, DateTime? ForNow)
+        private DailyReportDTO DayReport(DateOnly DayDate, Attendance? attendance,List<TimeOff> TimeOffsForTheDay, double HourlyRate, DateTime? ForNow)
         {
-            var attendance = user.Attendances.FirstOrDefault(attendance => attendance.Date == DayDate && !attendance.Deleted);
-
             if (attendance == null)
-                return new DialyReportDTO();
+                return new DailyReportDTO();
 
             var minutesWorked = 0.0;
 
             if (ForNow.HasValue)
                 minutesWorked = AttendanceCalculator.CalculateDialyMinutesWorked(attendance, ForNow.Value);
-            else
+            else if (attendance.CheckOut.HasValue)
                 minutesWorked = AttendanceCalculator.CalculateDialyMinutesWorked(attendance);
+            else
+                return new DailyReportDTO(attendance.CheckIn, TimeOffsForTheDay);
 
-            var overTimeWorked = (minutesWorked - 480) < 0 ? 0 : (minutesWorked - 480);
+                var overTimeWorked = (minutesWorked - 480) < 0 ? 0 : (minutesWorked - 480);
 
-            var moneyEarned = AttendanceCalculator.CalculateDailyMoneyEarned(minutesWorked - overTimeWorked, overTimeWorked, user.HourlyRate);
+            var moneyEarned = AttendanceCalculator.CalculateDailyMoneyEarned(minutesWorked - overTimeWorked, overTimeWorked, HourlyRate);
 
-            var TimeOffsForTheDay = attendance.TimeOffsForTheDay.ToList();
+            TimeOnly? checkoutTimeOnly = attendance.CheckOut.HasValue ?
+                    TimeOnly.FromDateTime(attendance.CheckOut.Value) : null;
 
-            return new DialyReportDTO(minutesWorked, moneyEarned, TimeOffsForTheDay);
+            return new DailyReportDTO(attendance.CheckIn, checkoutTimeOnly, minutesWorked, moneyEarned, TimeOffsForTheDay);
         }
 
         private TimeOnly? LatestTimeOffTime(Attendance attendance)
@@ -288,6 +422,47 @@ namespace DailyCheckIn.Controllers
                 return latestTimeOff.TimeOffEnd.Value;
 
             return latestTimeOff.TimeOffStart;
+        }
+
+        private bool TimeOffDuringTheAttendanceTime(Attendance attendance, TimeOff timeoff)
+        {
+            if (timeoff.TimeOffStart <= attendance.CheckIn)
+                return false;
+
+            if(attendance.CheckOut.HasValue 
+                && timeoff.TimeOffEnd.HasValue
+                && DateOnly.FromDateTime(attendance.CheckOut.Value) == attendance.Date
+                && TimeOnly.FromDateTime(attendance.CheckOut.Value) <= timeoff.TimeOffEnd.Value)
+                return false;
+
+            return true;
+        }
+
+        private bool TimeOffDuringOtherTimeOff(List<TimeOff> timesOffInThatDay, TimeOff timeoff) 
+        {
+            foreach(var t in timesOffInThatDay)
+            {
+                if(t.Id == timeoff.Id)
+                    continue;
+
+                if(!t.TimeOffEnd.HasValue)
+                    return true;
+
+                if (timeoff.TimeOffEnd.HasValue
+                    && timeoff.TimeOffStart < t.TimeOffStart
+                    && timeoff.TimeOffEnd <= t.TimeOffEnd)
+                    return false;
+
+                if (timeoff.TimeOffEnd.HasValue
+                    && timeoff.TimeOffStart > t.TimeOffEnd.Value)
+                    return false;
+
+                if (!timeoff.TimeOffEnd.HasValue
+                    && timeoff.TimeOffStart >= t.TimeOffEnd)
+                    return false; ;
+            }
+
+            return false;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

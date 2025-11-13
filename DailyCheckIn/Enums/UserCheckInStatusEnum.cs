@@ -4,6 +4,7 @@
     {
         CheckedIn = 1,
         NotCheckedIn = 2,
-        InTimeOff = 3
+        InTimeOff = 3,
+        CheckedOut = 4
     }
 }

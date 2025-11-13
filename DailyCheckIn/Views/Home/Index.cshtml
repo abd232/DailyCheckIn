@@ -3,6 +3,76 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="modal" tabindex="-1" id="editCheckInTimeModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">CheckIn Time</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <input type="text" id="IdInput" hidden/>
+                <div class="input-group mb-3">
+                    <label class="input-group-text col-3 text-center" for="CheckInInput">CheckIn Time</label>
+                    <input class="col-4" type="time" id="CheckInInput" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" id="checkInConfirmBtn" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="editCheckOutTimeModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">CheckOut Time</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <input type="text" id="IdInput" hidden />
+                <div class="input-group mb-3">
+                    <label class="input-group-text col-3 text-center" for="CheckOutInput">CheckOut Time</label>
+                    <input class="col-4" type="time" id="CheckOutInput" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" id="checkOutConfirmBtn" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="editTimeOffModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">TimeOff</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <input type="text" id="IdInput" hidden />
+                <div class="input-group mb-3">
+                    <label class="input-group-text col-3 text-center" for="TimeOffStart">TimeOff start</label>
+                    <input class="col-4" type="time" id="TimeOffStartInput" />
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text col-3 text-center" for="TimeOffEnd">TimeOff End</label>
+                    <input class="col-4" type="time" id="TimeOffEndInput" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" id="TimeOffConfirmBtn" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="d-flex justify-content-center flex-column align-self-center">
     <div class="d-flex flex-row align-items-center width-400 p-2 justify-content-between date-container border_outset">
         <svg id="leftArrowButton" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left arrow-icon-hover" viewBox="0 0 16 16">
@@ -14,11 +84,15 @@
         </svg>
     </div>
     <div class="checkContainer d-flex flex-column justify-content-center align-items-center width-400">
-        @if (DateOnly.FromDateTime(DateTime.Now) == Model.DayDate)
+        @if (DateOnly.FromDateTime(DateTime.Now) == Model.DayDate 
+            && Model.CheckInModelDTO != null
+            && Model.CheckInModelDTO.UserStatus != DailyCheckIn.Enums.UserCheckInStatusEnum.CheckedOut)
         {
             <partial name="_CheckInPartialView" model="Model.CheckInModelDTO" />
         }
-        <partial name="_DayReportPartialView" model="Model.DialyReportDTO" />
+        <div id="dayReportContainer" class="w-100">
+            <partial name="_DayReportPartialView" model="Model.DailyReportDTO" />
+        </div>
     </div>
 </div>
 <script>
@@ -42,4 +116,20 @@
         );
         window.location.href = url.toString();
     };
+
+    function reloadDayReportPartialView(){
+        $.ajax({
+            url: "/Home/DayReportPartialView",
+            type: "GET",
+            data: {
+                DayDate : "@Model.DayDate.ToString("yyyy-MM-dd")"
+            },
+            success: function (html) {
+                $("#dayReportContainer").html(html);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading partial:", error);
+            }
+        });
+    }
 </script>

@@ -4,6 +4,6 @@
     {
         public required DateOnly DayDate { get; set; }
         public CheckInModelDTO? CheckInModelDTO { get; set; }
-        public DialyReportDTO? DialyReportDTO { get; set; }
+        public DailyReportDTO? DailyReportDTO { get; set; }
     }
 }

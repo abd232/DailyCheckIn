@@ -1,0 +1,28 @@
+﻿fieldset {
+    position: relative;
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    float: none;
+    width: auto;
+    padding: 0 0.5em;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+}
+
+.add_button{
+    padding:0 4px;
+}
+
+.editTimeOffbutton {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items:center;
+    width: 30px;
+    height: 30px;
+}
